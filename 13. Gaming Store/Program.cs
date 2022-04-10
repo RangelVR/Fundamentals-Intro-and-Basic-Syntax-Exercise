@@ -7,15 +7,16 @@ namespace _13._Gaming_Store
         static void Main(string[] args)
         {
             double currBalance = double.Parse(Console.ReadLine());
-            string gameName = Console.ReadLine();
-
+            
             double outFallPrice = 39.99;
             double csPricePrice = 15.99;
             double zplinterPrice = 19.99;
             double honoredPrice = 59.99;
             double roverWatchPrice = 29.99;
             double roverWatchOrEdPrice = 39.99;
-
+            
+            string gameName = Console.ReadLine();
+            
             double totalSpend = 0;
 
             while (gameName != "Game Time")
