@@ -1,44 +1,29 @@
-﻿using System;
+using System;
 
-namespace _10._Rage_Expenses
+namespace _11._Orders
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int lostGamesCount = int.Parse(Console.ReadLine());
-            double headsetPrice = double.Parse(Console.ReadLine());
-            double mousePrice = double.Parse(Console.ReadLine());
-            double keyboardPrice = double.Parse(Console.ReadLine());
-            double displayPrice = double.Parse(Console.ReadLine());
+            //((daysInMonth * capsulesCount) * pricePerCapsule)
+            int n = int.Parse(Console.ReadLine());
 
-            double rageExpenses = 0;
+            double totalPrice = 0;
+            for (int i = 0; i < n; i++)
+            {
+                double priceForTheCoffe = 0;
 
-            double totalHeadsetPrice = (lostGamesCount / 2) * headsetPrice;
-            double totalMousePrice = (lostGamesCount / 3) * mousePrice;
-            double totalKeyboardPrice = (lostGamesCount / 6) * keyboardPrice;
-            double totalDisplayPrice = (lostGamesCount / 12) * displayPrice;
+                double pricePerCapsule = double.Parse(Console.ReadLine());
+                int daysInMonth = int.Parse(Console.ReadLine());
+                int capsulesCount = int.Parse(Console.ReadLine());
 
-            if (lostGamesCount >= 12)
-            {
-                rageExpenses = totalHeadsetPrice + totalMousePrice + totalKeyboardPrice + totalDisplayPrice;
-            }
-            else if (lostGamesCount < 12 && totalKeyboardPrice > 3)
-            {
-                rageExpenses = totalHeadsetPrice + totalMousePrice + totalKeyboardPrice;
-                
-            }
-            else if (lostGamesCount == 3)
-            {
-                rageExpenses = totalHeadsetPrice + totalMousePrice;
-            }
-            else if (lostGamesCount == 2)
-            {
-                rageExpenses = totalHeadsetPrice;
+                priceForTheCoffe += ((daysInMonth * capsulesCount) * pricePerCapsule);
+                totalPrice += priceForTheCoffe;
+                Console.WriteLine($"The price for the coffee is: ${priceForTheCoffe:f2}");
             }
 
-            Console.WriteLine($"Rage expenses: {rageExpenses:f2} lv.");
-
+            Console.WriteLine($"Total: ${totalPrice:f2}");
         }
     }
 }
