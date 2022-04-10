@@ -8,7 +8,7 @@ namespace _14._Reverse_String
         {
             string input = Console.ReadLine();
 
-            string reverseInput = string.Empty;
+            string reversedInput = string.Empty;
 
             for (int i = input.Length - 1; i >= 0; i--)
             {
