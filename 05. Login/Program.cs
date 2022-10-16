@@ -1,44 +1,35 @@
-﻿using System;
+using System;
 
-namespace _05._Login
+namespace Login
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string userName = Console.ReadLine();
-            int numbersOfAttempts = 4;
-            string reversedUserName = string.Empty;
-            int counter = 4;
+            string username = Console.ReadLine();
+            string pass = string.Empty;
 
-            for (int j = userName.Length - 1; j >= 0; j--)
+            for (int i = username.Length - 1; i >= 0; i--)
             {
-                reversedUserName += userName[j];
+                pass += username[i];
             }
+            string password = Console.ReadLine();
+            int count = 0;
 
-            
-            for (int i = 1; i <= numbersOfAttempts; i++)
-            {
+            while (password != pass)
+            {                
+                count += 1;
                 
-                string password = Console.ReadLine();
-                counter--;
-
-                if (password == reversedUserName)
+                if (count > 3)
                 {
-                    Console.WriteLine($"User {userName} logged in.");
-                    break;
+                    Console.WriteLine($"User {username} blocked!");
+                    return;
                 }
-                else if (counter != 0)
-                {
-                    Console.WriteLine("Incorrect password. Try again.");
-                }
-                if (counter == 0)
-                {
-                    Console.WriteLine($"User {userName} blocked!");
-                    break;
-                }
-
+                Console.WriteLine($"Incorrect password. Try again.");
+                password = Console.ReadLine();
             }
+            Console.WriteLine($"User {username} logged in.");
         }
+        
     }
 }
