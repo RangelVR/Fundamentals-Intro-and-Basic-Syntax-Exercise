@@ -1,29 +1,28 @@
-﻿using System;
+using System;
 
-namespace _06._Strong_number
+namespace Demo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string isStrongNumber = Console.ReadLine();
-            int num = 0;
-            int sumFactorial = 0;
-            int factorial = 1;
+            string num = Console.ReadLine();
+            int currNum = 0;
 
-            for (int i = 0; i < isStrongNumber.Length; i++)
+            int isStrongNum = 0;
+
+            for (int i = 0; i < num.Length; i++)
             {
-                num = isStrongNumber[i] - '0';
-                for (int k = 1; k <= num; k++)
-                {
-                    factorial *= k;
-                }
-                sumFactorial += factorial;
-                factorial = 1;
-            }
-            string strongNum = sumFactorial.ToString();
+                currNum = num[i] - '0';
 
-            if (strongNum == isStrongNumber)
+                int factoriel = 1;
+                for (int j = 1; j <= currNum; j++)
+                {
+                    factoriel *= j;
+                }
+                isStrongNum += factoriel;
+            }
+            if (isStrongNum == int.Parse(num))
             {
                 Console.WriteLine("yes");
             }
@@ -31,7 +30,7 @@ namespace _06._Strong_number
             {
                 Console.WriteLine("no");
             }
-            
+
         }
     }
 }
