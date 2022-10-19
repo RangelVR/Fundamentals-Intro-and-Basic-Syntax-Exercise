@@ -6,7 +6,6 @@ namespace _05._Messages
     {
         static void Main(string[] args)
         {
-
             int numInputs = int.Parse(Console.ReadLine());
             string word = string.Empty;
 
@@ -157,8 +156,9 @@ namespace _05._Messages
                         break;
                 }
             }
-
             Console.WriteLine(word);
+            
+            
             //int clicks = int.Parse(Console.ReadLine());
             //string message = string.Empty;
 
