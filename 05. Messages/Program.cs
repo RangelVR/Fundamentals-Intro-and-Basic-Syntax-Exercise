@@ -12,7 +12,8 @@ namespace _05._Messages
             for (int i = 0; i < numInputs; i++)
             {
                 string num = Console.ReadLine();
-
+                 // additionalNum - ASCII Table
+                
                 switch (num[0])
                 {
                     case '0':
